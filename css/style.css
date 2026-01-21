@@ -1,0 +1,166 @@
+body {
+    position: relative;
+    background-color: hsl(30, 54%, 90%);
+}
+
+.wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+    width: min(100%, 46rem);
+    border-radius: 20px;
+    padding: clamp(2.18rem, 2.77vw, 2.5rem);
+    margin-top: 8.3vw;
+    margin-bottom: 8.3vw;
+}
+
+
+.wrapper>img {
+    width: 100%;
+    margin-bottom: clamp(2.5rem, 5.97%, 2.75rem);
+    border-radius: 15px;
+}
+
+h1 {
+    font-family: "Young Serif", sans-serif;
+    font-size: clamp(2.25rem, 5.43%, 2.5rem);
+    margin-bottom: clamp(2rem, 4.75%, 2.18rem);
+    color: hsl(24, 5%, 18%);
+}
+
+p, li {
+    color: hsl(30, 10%, 34%);
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(1rem, 2.17%, 1rem);
+    margin-bottom: clamp(2rem, 4.75%, 2.18rem);
+}
+
+.time {
+    width: 100%;
+    padding: clamp(1.5rem, 2.08vw, 1.875rem);
+    background-color: hsl(330, 100%, 98%);
+    margin-bottom: clamp(2rem, 4.75%, 2.18rem);
+    border-radius: 15px;
+}
+
+h3 {
+   font-family: "Outfit", sans-serif;
+   font-weight: 600;
+    font-size: clamp(1rem, 1.38vw, 1.25rem); 
+    margin-bottom: clamp(1rem, 1.11vw, 1rem);
+    color: hsl(332, 51%, 32%);
+}
+
+
+
+ul>li {
+    position: relative;
+    margin-bottom: clamp(0.75rem, 0.83vw, 0.75rem);
+    margin-left: clamp(2.25rem, 2.77vw, 2.5rem);
+}
+
+li>span {
+    font-weight: 700;
+}
+
+.time> ul li::before {
+    content: "•"; /* Или можно использовать "●", "▪", "○" */
+    color: hsl(332, 51%, 32%); /* Цвет точки */
+    position: absolute;
+    left: -30px;
+    font-size: 1.2em;
+}
+
+h2 {
+   font-family: "Young Serif", sans-serif;
+   font-size: clamp(1.5rem, 2.08vw, 1.875rem); 
+   margin-bottom: clamp(1.75rem, 2.22vw, 2rem);
+   color: hsl(14, 45%, 36%);
+}
+
+
+.ingredients>ul {
+    margin-bottom: clamp(1.75rem, 2.22vw, 2rem);
+}
+
+.ingredients>ul li {
+    margin-left: clamp(2.25rem, 2.77vw, 2.5rem);
+}
+
+.ingredients>ul li::before {
+    content: "•"; /* Или можно использовать "●", "▪", "○" */
+    color: hsl(14, 45%, 36%); /* Цвет точки */
+    position: absolute;
+    left: -30px;
+    font-size: 1.2em;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    background-color: hsla(32, 10%, 34%, 0.193);
+    margin-bottom: clamp(1.75rem, 2.22vw, 2rem);
+}
+
+ol>li {
+   margin-bottom: clamp(0.875rem, 1.11vw, 1rem); 
+}
+
+ol {
+    counter-reset: my-counter;
+    margin-bottom: clamp(1.75rem, 2.22vw, 2rem); /* Инициализация счётчика */
+}
+
+ol li {
+    list-style: none;
+    position: relative;
+    margin-left: clamp(2.25rem, 2.77vw, 2.5rem); /* Больше отступ для цифр */
+    counter-increment: my-counter; /* Увеличение счётчика */
+}
+
+ol li::before {
+    content: counter(my-counter) "."; /* Номер с точкой */
+    color: hsl(14, 45%, 36%); /* Цвет цифр */
+    position: absolute;
+    left: -30px;
+    font-weight: 700;
+}
+
+.nutrition>p {
+    margin-bottom: clamp(1.25rem, 1.8vw, 1.625rem);
+}
+
+.nutrition {
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(0.875rem, 1.11vw, 1rem);
+    display: flex;
+    gap: 17.36vw;
+    border-bottom: 1px solid hsla(32, 10%, 34%, 0.193);
+    padding: 1rem 2rem;
+}
+
+.nutrition__nutr {
+    display: inline-block;
+    width: clamp(3.125rem, 4.16vw, 3.75rem);
+    color: hsl(30, 10%, 34%);
+}
+
+.nutrition__digit {
+    font-weight: 700;
+    color: hsl(14, 45%, 36%);
+}
+
+@media (max-width: 740px) {
+    .wrapper {
+        border-radius: 0;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .wrapper>img {
+        border-radius: 0;
+        width: 100vw;
+        margin-left: -2.18rem;
+    }
+}
